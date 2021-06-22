@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STYLiSH</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/all.css" />
+    <link rel="stylesheet" href="./css/cart.css" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DBPSC6M41K"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-DBPSC6M41K');
+    </script>
+  </head>
+  <body>
+    <header class="header d-flex justify-content-between align-items-center">
+      <!-- 製作左邊 Header 的 Nav -->
+      <div class="nav d-flex">
+        <a href="index.html">
+          <img class="logo ml-1 mr-6" src="./images/logo.png" alt="STYLiSH Logo" />
+        </a>
+        <ul class="menu d-flex mt-1">
+          <li class="menuWoman pr-2 border-right">
+            <a href="./?tag=women">女 裝</a>
+          </li>
+          <li class="menuMan px-2 border-right">
+            <a href="./?tag=men">男 裝</a>
+          </li>
+          <li class="menuAcc pl-2">
+            <a href="./?tag=accessories">配 件</a>
+          </li>
+        </ul>
+      </div>
+
+      <form action="./" method="get">
+        <input type="text" name="tag" id="search" class="search rounded-pill" />
+      </form>
+
+      <!-- 製作右邊 Header 的資訊欄 -->
+      <div class="info d-flex pr-2">
+        <a class="cart" href="./cart.html">
+          <img class="cartImg px-2" src="./images/cart.png" alt="Cart" />
+          <div class="mobile-text d-none">購物車</div>
+          <div class="qty">0</div>
+        </a>
+
+        <a class="memberInfo" href="javascript:;" onclick="checkLoginState()">
+          <img src="./images/member.png" alt="memberInfo" />
+          <div class="mobile-text d-none">會員</div>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <div class="cart__Page">
+        <div class="cart__header">
+          <div class="title">購物車<span></span></div>
+          <div class="item__quantity">數量</div>
+          <div class="item__price">單價</div>
+          <div class="item__subtotal">小計</div>
+          <div class="item__remove"></div>
+        </div>
+        <div class="items"></div>
+        <div class="shipment">
+          <div class="shipment__name">配送國家</div>
+          <select class="shipment__select">
+            <option value="台灣及離島">台灣及離島</option>
+          </select>
+          <div class="shipment__name">付款方式</div>
+          <select class="shipment__select">
+            <option value="信用卡付款">信用卡付款</option>
+          </select>
+        </div>
+        <div class="reminder">
+          ※ 提醒您：
+          <br />
+          ● 選擇宅配-請填寫正確收件人資訊，避免包裹配送不達
+          <br />
+          ● 選擇超商-請填寫正確收件人姓名(與證件相符)，避免無法領取
+        </div>
+        <div class="form-header">訂購資料</div>
+        <div class="form">
+          <div class="field">
+            <label for="name" class="field__name">收件人姓名</label>
+            <div class="field__input">
+              <input id="name" type="text" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="email" class="field__name">Email</label>
+            <div class="field__input">
+              <input id="email" type="text" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="phone" class="field__name">手機號碼</label>
+            <div class="field__input">
+              <input id="phone" type="text" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="address" class="field__name">收件地址</label>
+            <div class="field__input">
+              <input id="address" type="text" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="time" class="field__name">配送時間</label>
+            <div class="field__input">
+              <input type="radio" name="time" id="morning" checked="checked" />
+              <label for="morning">08:00-12:00</label>
+              <input type="radio" name="time" id="afternoon" />
+              <label for="afternoon">14:00-18:00</label>
+              <input type="radio" id="anytime" name="time" />
+              <label for="anytime">不指定</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-header">付款資料</div>
+        <div class="form">
+          <div class="field">
+            <label for="card" class="field__name">信用卡號碼</label>
+            <div class="field__input">
+              <div id="card-number" class="tpfield" />
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label for="expire" class="field__name">有效期限</label>
+          <div class="field__input">
+            <div id="card-expiration-date" class="tpfield" />
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <label for="ccv" class="field__name">安全碼</label>
+        <div class="field__input">
+          <div id="card-ccv" class="tpfield"></div>
+        </div>
+      </div>
+      <div class="summary">
+        <div class="subtotal">
+          <div class="name">總金額</div>
+          <div class="value">NT.<span>799</span></div>
+        </div>
+        <div class="freight">
+          <div class="name">運費</div>
+          <div class="value">NT.<span>60</span></div>
+        </div>
+        <div class="total">
+          <div class="name">應付金額</div>
+          <div class="value">NT.<span>859</span></div>
+        </div>
+        <button class="checkout">確認付款</button>
+      </div>
+      <div class="loading">
+        <img src="./images/loading.gif" alt="loading" />
+      </div>
+    </main>
+
+    <footer class="footer d-flex justify-content-center align-items-center">
+      <div class="container d-flex justify-content-between align-items-center">
+        <ul class="footerNav d-flex">
+          <li class="mr-1">
+            <a href="#">關於 Stylish</a>
+          </li>
+          <li class="mr-1">
+            <a href="#">服務條款</a>
+          </li>
+          <li class="mr-1">
+            <a href="#">隱私政策</a>
+          </li>
+          <li class="mr-1">
+            <a href="#">聯絡我們</a>
+          </li>
+          <li class="mr-1">
+            <a href="#">FAQ</a>
+          </li>
+        </ul>
+        <ul class="footerContact d-flex">
+          <li class="line mr-1">
+            <a href="#">
+              <img src="./images/line.png" alt="Line" />
+            </a>
+          </li>
+          <li class="twitter mr-1">
+            <a href="#">
+              <img src="./images/twitter.png" alt="Twitter" />
+            </a>
+          </li>
+          <li class="facebook mr-1">
+            <a href="#">
+              <img src="./images/facebook.png" alt="Facebook" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="copyright">&copy; 2021. All rights reserved.</div>
+    </footer>
+
+    <script src="./js/fb.js"></script>
+    <script src="./js/cart.js"></script>
+    <script src="https://js.tappaysdk.com/tpdirect/v5.5.1"></script>
+    <script src="./js/tapPay.js"></script>
+  </body>
+</html>

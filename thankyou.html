@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STYLiSH</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/all.css" />
+    <link rel="stylesheet" href="./css/thankyou.css" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DBPSC6M41K"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-DBPSC6M41K');
+    </script>
+  </head>
+  <body>
+    <header class="header d-flex justify-content-between align-items-center">
+      <!-- 製作左邊 Header 的 Nav -->
+      <div class="nav d-flex">
+        <a href="index.html">
+          <img class="logo ml-1 mr-6" src="./images/logo.png" alt="STYLiSH Logo" />
+        </a>
+        <ul class="menu d-flex mt-1">
+          <li class="menuWoman pr-2 border-right">
+            <a href="./?tag=women">女 裝</a>
+          </li>
+          <li class="menuMan px-2 border-right">
+            <a href="./?tag=men">男 裝</a>
+          </li>
+          <li class="menuAcc pl-2">
+            <a href="./?tag=accessories">配 件</a>
+          </li>
+        </ul>
+      </div>
+
+      <form action="./" method="get">
+        <input type="text" name="tag" id="search" class="search rounded-pill" />
+      </form>
+
+      <!-- 製作右邊 Header 的資訊欄 -->
+      <div class="info d-flex pr-2">
+        <a class="cart" href="./cart.html">
+          <img class="cartImg px-2" src="./images/cart.png" alt="Cart" />
+          <div class="mobile-text d-none">購物車</div>
+          <div class="qty">0</div>
+        </a>
+
+        <a class="memberInfo" href="javascript:;" onclick="checkLoginState()">
+          <img src="./images/member.png" alt="memberInfo" />
+          <div class="mobile-text d-none">會員</div>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <div class="thankyou">
+        <h2>感謝您的購買，我們會盡快將商品送達！</h2>
+        <h3>請記住以下訂單編號，以便查詢</h3>
+        <div id="number"></div>
+        <a href="./index.html">繼續購物</a>
+      </div>
+    </main>
+
+    <footer class="footer d-flex justify-content-center align-items-center">
+      <div class="container d-flex justify-content-between align-items-center">
+        <ul class="footerNav d-flex">
+          <li class="mr-1">
+            <a href="#">關於 Stylish</a>
+          </li>
+          <li class="mr-1">
+            <a href="#">服務條款</a>
+          </li>
+          <li class="mr-1">
+            <a href="#">隱私政策</a>
+          </li>
+          <li class="mr-1">
+            <a href="#">聯絡我們</a>
+          </li>
+          <li class="mr-1">
+            <a href="#">FAQ</a>
+          </li>
+        </ul>
+        <ul class="footerContact d-flex">
+          <li class="line mr-1">
+            <a href="#">
+              <img src="./images/line.png" alt="Line" />
+            </a>
+          </li>
+          <li class="twitter mr-1">
+            <a href="#">
+              <img src="./images/twitter.png" alt="Twitter" />
+            </a>
+          </li>
+          <li class="facebook mr-1">
+            <a href="#">
+              <img src="./images/facebook.png" alt="Facebook" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="copyright">&copy; 2021. All rights reserved.</div>
+    </footer>
+
+    <script src="./js/utilities.js"></script>
+    <script src="./js/fb.js"></script>
+    <script src="./js/thankyou.js"></script>
+  </body>
+</html>
