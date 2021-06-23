@@ -5,7 +5,7 @@ A fancy e-commerce website which always fulfills your shopping desires.
 ## Table of Content
 
 - [Technologies](#Technologies)
-- [Features and Demo](#Features-and-Demo)
+- [Features](#Features)
 - [Contact](#Contact)
 
 ---
