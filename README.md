@@ -2,6 +2,8 @@
 
 A fancy e-commerce website which always fulfills your shopping desires.
 
+<img src= "readimg/stylish.gif" width=100%/>
+
 ## Table of Content
 
 - [Technologies](#Technologies)
